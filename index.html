@@ -1,0 +1,72 @@
+<html>
+    <head>
+        <title>よっしぃ公式サイト</title>
+        <style>
+        .resizeimage img{
+             width: 100%;
+             display: flex; justify-content: center;
+            }
+
+
+        /* 要素の初期状態 */
+        .fade-in {
+          opacity: 0;
+          transition: opacity 1s ease-in;
+        }
+
+        /* フェードインのアニメーション */
+        .fade-in.fade-in-visible {
+          opacity: 1;
+        }
+
+        .shadow-box {
+        width: 100%;
+        height: 700px;
+        background-color: #a8c6ff;
+        box-shadow: 0px 0px 10px 2px rgba(0, 25, 107, 0.3);
+        }
+        
+        </style>
+        <script>
+        window.addEventListener('DOMContentLoaded', function() {
+          var fadeIns = document.querySelectorAll('.fade-in');
+    
+          function fadeInElements() {
+            fadeIns.forEach(function(element) {
+              var rect = element.getBoundingClientRect();
+              var isVisible = (
+                rect.top >= 0 &&
+                rect.left >= 0 &&
+                rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+                rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+              );
+    
+              if (isVisible) {
+                element.classList.add('fade-in-visible');
+              }
+            });
+          }
+    
+          // 初回の要素表示チェック
+          fadeInElements();
+    
+          // スクロールイベント時に要素の表示チェック
+          window.addEventListener('scroll', fadeInElements);
+        });
+        </script>
+    </head>
+    <body style="background-color: #6ac3f7;">
+        <p class="resizeimage">
+            <img src="header.png" alt="へっだー">
+        </p>
+        <div class="fade-in"><div class="shadow-box">
+        <h1 style="text-align: center;">よっしぃのホームページヘようこそ！</h1>
+        <div style="text-align: center;"><a href="https://twitter.com/yoss1_desu"><img src="twitter.png" width="20%"></a>
+        <a href="https://www.instagram.com/kikuchi_nnpo/"><img src="instagram.png" width="20%"></a></div>
+        <h3>サカバンバスピスのカーソル</h3>
+        <img src="preview.png"><br>
+        <a href="https://github.com/Notyoss1/sakabannbasupisu-cursor/tree/main">こっからダウンロード</a>
+        <h6>もう書くことなくなっちゃった...</h6>
+        </div></div>
+    </body>
+</html>
